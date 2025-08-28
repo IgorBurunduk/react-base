@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Footer } from '@/components/footer';
-import { Header } from '@/components/header';
+import { Layout } from '@/modules/layout';
 
 import { MainAbout } from './components/main-about';
 import { MainBenefits } from './components/main-benefits';
@@ -12,17 +11,13 @@ import { MainTeachers } from './components/main-teachers';
 
 export const MainPageContent = () => {
   return (
-    <>
-      <Header />
-      <main>
+    <Layout>
         <MainPromo />
         <MainAbout />
         <MainBenefits />
         <MainTeachers />
         <MainPackages />
         <MainForm />
-      </main>
-      <Footer />
-    </>
+    </Layout>
   );
 };
