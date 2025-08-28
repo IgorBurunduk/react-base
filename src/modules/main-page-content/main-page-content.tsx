@@ -12,12 +12,12 @@ import { MainTeachers } from './components/main-teachers';
 export const MainPageContent = () => {
   return (
     <Layout>
-        <MainPromo />
-        <MainAbout />
-        <MainBenefits />
-        <MainTeachers />
-        <MainPackages />
-        <MainForm />
+      <MainPromo />
+      <MainAbout />
+      <MainBenefits />
+      <MainTeachers />
+      <MainPackages />
+      <MainForm />
     </Layout>
   );
 };

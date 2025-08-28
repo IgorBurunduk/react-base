@@ -3,7 +3,6 @@ import type { BenefitItemsType } from '@/types/benefits';
 
 import styles from './main-benefits.module.scss';
 
-// eslint-disable-next-line no-unused-vars
 const benefitItems: BenefitItemsType = [
   {
     id: 1,
