@@ -1,9 +1,10 @@
 import { Container } from '@/components/container';
+import type { BenefitItemsType } from '@/types/benefits';
 
-// import type { BenefitItemsType } from '@/types/benefits';
 import styles from './main-benefits.module.scss';
 
-/*const benefitItems: BenefitItemsType = [
+// eslint-disable-next-line no-unused-vars
+const benefitItems: BenefitItemsType = [
   {
     id: 1,
     subtitle: 'Удостоверение',
@@ -23,7 +24,7 @@ import styles from './main-benefits.module.scss';
       'Возможность пройти практику по преподаванию робототехники на базе R:ED LAB (в оффлайн или онлайн формате)',
     tooltip: 'При наличии свободных мест',
   },
-]; */
+];
 
 export const MainBenefits = () => {
   return (
