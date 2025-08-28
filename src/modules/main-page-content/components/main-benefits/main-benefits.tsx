@@ -1,9 +1,9 @@
 import { Container } from '@/components/container';
-import type { BenefitItemsType } from '@/types/benefits';
 
+// import type { BenefitItemsType } from '@/types/benefits';
 import styles from './main-benefits.module.scss';
 
-const benefitItems: BenefitItemsType = [
+/*const benefitItems: BenefitItemsType = [
   {
     id: 1,
     subtitle: 'Удостоверение',
@@ -23,7 +23,7 @@ const benefitItems: BenefitItemsType = [
       'Возможность пройти практику по преподаванию робототехники на базе R:ED LAB (в оффлайн или онлайн формате)',
     tooltip: 'При наличии свободных мест',
   },
-];
+]; */
 
 export const MainBenefits = () => {
   return (

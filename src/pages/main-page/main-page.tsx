@@ -11,7 +11,7 @@ export const MainPage = () => {
   useEffect(() => {
     getTeachersList()
       .then((data) => setTeachersList(data))
-      .catch(console.error);
+      .catch(/*console.error*/);
   }, []);
 
   return (
