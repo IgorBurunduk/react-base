@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Layout } from '@/modules/layout';
-
 import { MainAbout } from './components/main-about';
 import { MainBenefits } from './components/main-benefits';
 import { MainForm } from './components/main-form';
@@ -11,13 +9,13 @@ import { MainTeachers } from './components/main-teachers';
 
 export const MainPageContent = () => {
   return (
-    <Layout>
+    <>
       <MainPromo />
       <MainAbout />
       <MainBenefits />
       <MainTeachers />
       <MainPackages />
       <MainForm />
-    </Layout>
+    </>
   );
 };
