@@ -1,6 +1,6 @@
 @use '@/styles/variables.scss' as *;
 
-.btn {
+.button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -14,7 +14,33 @@
   border: none;
   border-radius: 5px;
   user-select: none;
-  background-color: $controls-bg-primary;
-  color: $controls-color-primary;
   transition: background-color 0.3s ease, color 0.3s ease;
+
+
+  &.primary {
+    background-color: $controls-bg-primary;
+    color: $controls-color-primary;
+
+    &:hover {
+      background-color: $controls-bg-primary-hover;
+    }
+  }
+
+  &.secondary {
+    background-color: $controls-bg-secondary;
+    color: $controls-color-secondary;
+
+    &:hover {
+      background-color: $controls-bg-secondary-hover;
+    }
+  }
+
+  &.text {
+    color: $controls-color-text;
+
+    &:hover {
+      color: $controls-color-text-hover;
+    }
+  }
+
 }

@@ -13,13 +13,19 @@ $text-color-tertiary: #595664;
 $text-color-accent: $accent-color;
 
 $bg-color-primary: $secondary-color;
-$bg-color-secondary: #f9f9f9;
-$bg-color-tertiary: $primary-color;
+$bg-color-secondary: $primary-color;
+$bg-color-tertiary: #f9f9f9;
 $bg-color-quaternary: $tertiary-color;
 $bg-color-accent: $accent-color;
 
 $controls-bg-primary: $accent-color;
-$controls-bg-secondary: $secondary-color;
-$controls-bg-tertiary: $primary-color;
+$controls-bg-secondary: $primary-color;
+$controls-bg-tertiary: $secondary-color;
 $controls-color-primary: $secondary-color;
-$controls-color-secondary: $accent-color;
+$controls-color-secondary: $secondary-color;
+$controls-color-tertiary: #666779;
+$controls-color-text: $accent-color;
+
+$controls-bg-primary-hover: #7c0e12;
+$controls-bg-secondary-hover: #07030e;
+$controls-color-text-hover: $primary-color;
