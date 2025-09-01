@@ -26,6 +26,10 @@
         background-color: $bg-color-primary;
       }
     }
+
+    .buttonMargin {
+      margin-top: 19px;
+    }
   }
 
   .packageTitle {
@@ -72,6 +76,11 @@
   .packageDescription {
     font-size: 18px;
     margin-top: 20px;
+  }
+
+  .buttonMargin {
+    margin-top: 28px;
+    transition: margin-top 0.2s ease;
   }
 }
 
