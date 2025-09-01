@@ -14,33 +14,33 @@
   border: none;
   border-radius: 5px;
   user-select: none;
-  transition: background-color 0.3s ease, color 0.3s ease;
+}
 
+.primary {
+  background-color: $controls-bg-primary;
+  color: $controls-color-primary;
+  transition: background-color 0.3s ease;
 
-  &.primary {
-    background-color: $controls-bg-primary;
-    color: $controls-color-primary;
-
-    &:hover {
-      background-color: $controls-bg-primary-hover;
-    }
+  &:hover {
+    background-color: $controls-bg-primary-hover;
   }
+}
 
-  &.secondary {
-    background-color: $controls-bg-secondary;
-    color: $controls-color-secondary;
+.secondary {
+  background-color: $controls-bg-secondary;
+  color: $controls-color-secondary;
+  transition: background-color 0.3s ease;
 
-    &:hover {
-      background-color: $controls-bg-secondary-hover;
-    }
+  &:hover {
+    background: $controls-bg-secondary-hover;
   }
+}
 
-  &.text {
-    color: $controls-color-text;
+.text {
+  color: $controls-color-text;
+  transition: color 0.3s ease;
 
-    &:hover {
-      color: $controls-color-text-hover;
-    }
+  &:hover {
+    color: $controls-color-text-hover;
   }
-
 }
