@@ -37,6 +37,8 @@
 }
 
 .text {
+  padding: 0;
+  border-radius: 0;
   color: $controls-color-text;
   transition: color 0.3s ease;
 
