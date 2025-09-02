@@ -39,10 +39,10 @@
 .text {
   padding: 0;
   border-radius: 0;
-  color: $controls-color-text;
+  color: $controls-color-tertiary;
   transition: color 0.3s ease;
 
   &:hover {
-    color: $controls-color-text-hover;
+    color: $controls-color-tertiary-hover;
   }
 }
