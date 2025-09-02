@@ -19,7 +19,11 @@ $bg-color-quaternary: $tertiary-color;
 $bg-color-accent: $accent-color;
 
 $controls-bg-primary: $accent-color;
-$controls-bg-secondary: $secondary-color;
-$controls-bg-tertiary: $primary-color;
+$controls-bg-primary-hover: #7c0e12;
+$controls-bg-secondary: $primary-color;
+$controls-bg-secondary-hover: #07030e;
+$controls-bg-tertiary: $secondary-color;
 $controls-color-primary: $secondary-color;
-$controls-color-secondary: $accent-color;
+$controls-color-secondary: $secondary-color;
+$controls-color-tertiary: $accent-color;
+$controls-color-tertiary-hover: $primary-color;
