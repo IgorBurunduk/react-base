@@ -1,3 +1,4 @@
+import { Tooltip } from '@/components/tooltip/tooltip';
 import type { BenefitItemType } from '@/types/benefits';
 
 import styles from './benefit-item.module.scss';
@@ -13,7 +14,7 @@ export const BenefitItem = ({
     <div className={styles.benefitItem}>
       <div className={styles.benefitHeader}>
         <h3 className={styles.benefitTitle}>{subtitle}</h3>
-        {Boolean(tooltip) && <span>{tooltip}</span>}
+        {tooltip ? <Tooltip text={tooltip} /> : null}
       </div>
       <p className={styles.benefitDescription}>{description}</p>
     </div>
