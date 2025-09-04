@@ -1,18 +1,34 @@
 @use '@/styles/variables.scss' as *;
 
 .benefitItem {
-  display: block;
+  flex-basis: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
   .benefitHeader {
-    display: block;
+    position: relative;
+    width: max-content;
   }
 
   .benefitTitle {
-    display: block;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: 600;
   }
 
   .benefitDescription {
-    display: block;
+    font-size: 18px;
+    color: $text-color-tertiary;
   }
+}
 
+@media (max-width: 1024px) {
+  .benefitItem {
+    align-items: center;
+
+    .benefitTitle {
+      font-size: 20px;
+    }
+  }
 }

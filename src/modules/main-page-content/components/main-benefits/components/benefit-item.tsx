@@ -13,7 +13,7 @@ export const BenefitItem = ({
     <div className={styles.benefitItem}>
       <div className={styles.benefitHeader}>
         <h3 className={styles.benefitTitle}>{subtitle}</h3>
-        {Boolean(tooltip) && (<div>{tooltip}</div>)}
+        {Boolean(tooltip) && <span>{tooltip}</span>}
       </div>
       <p className={styles.benefitDescription}>{description}</p>
     </div>

@@ -1,10 +1,10 @@
 import { Container } from '@/components/container';
-import { BenefitItem } from './components/benefit-item';
 import type { BenefitItemsType } from '@/types/benefits';
-import type { BenefitItemType } from '@/types/benefits';
+
+import { BenefitItem } from './components/benefit-item';
+
 import styles from './main-benefits.module.scss';
 
-// eslint-disable-next-line no-unused-vars
 const benefitItems: BenefitItemsType = [
   {
     id: 1,
@@ -20,7 +20,7 @@ const benefitItems: BenefitItemsType = [
   },
   {
     id: 3,
-    subtitle: 'Практику ',
+    subtitle: 'Практику',
     description:
       'Возможность пройти практику по преподаванию робототехники на базе R:ED LAB (в оффлайн или онлайн формате)',
     tooltip: 'При наличии свободных мест',

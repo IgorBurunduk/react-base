@@ -9,11 +9,19 @@
       font-size: 50px;
       font-weight: 600;
     }
+
+    .items {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-top: 60px;
+    }
   }
 }
 
 @media (max-width: 1024px) {
-  .profit {
+  .benefits {
     padding: 50px 0;
 
     .wrapper {
@@ -25,7 +33,7 @@
 }
 
 @media (max-width: 768px) {
-  .profit {
+  .benefits {
     padding: 40px 0;
   }
 }
