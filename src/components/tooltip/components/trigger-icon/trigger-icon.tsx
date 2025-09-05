@@ -7,8 +7,8 @@ export interface TriggerIconProps {
 }
 
 export const TriggerIcon = ({ iconContent }: TriggerIconProps) => {
-  const isNotEmptyString = (typeof iconContent === 'string') && (iconContent?.trim().length > 0);
-  return (iconContent && isNotEmptyString) ? (
+  const isNotEmptyString = typeof iconContent === 'string' && iconContent?.trim().length > 0;
+  return iconContent && isNotEmptyString ? (
     <span className={`${styles.triggerIcon}`}>{iconContent}</span>
   ) : (
     <span className={`${styles.triggerIcon} ${styles.triggerIconDefault}`}>{'i'}</span>
