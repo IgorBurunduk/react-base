@@ -29,7 +29,7 @@ export const Tooltip = ({ text, icon, additionalClassName }: TooltipProps) => {
       onMouseLeave={handleMouseLeave}
     >
       <span className={styles.trigger}>{<TriggerIcon iconContent={icon} />}</span>
-      {isTextVisible && <p className={`${styles.text} ${styles.textVisible}`}>{text}</p>}
+      {isTextVisible && <p className={`${styles.text}`}>{text}</p>}
     </div>
   );
 };
