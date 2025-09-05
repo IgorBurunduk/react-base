@@ -1,10 +1,14 @@
 import { useState } from 'react';
 
-import type { TooltipProps } from '@/types/tooltip';
-
-import { TriggerIcon } from './components/trigger-icon/trigger-icon';
+import { TooltipIcon } from '@/assets/icons';
 
 import styles from './tooltip.module.scss';
+
+interface TooltipProps {
+  text: string;
+  icon?: string;
+  additionalClassName?: string;
+}
 
 export const Tooltip = ({ text, icon, additionalClassName }: TooltipProps) => {
   const [isTextVisible, setIsTextVisible] = useState(false);
@@ -22,14 +26,27 @@ export const Tooltip = ({ text, icon, additionalClassName }: TooltipProps) => {
     setIsTextVisible(false);
   };
 
+  const createTriggerIcon = () => {
+    const isNotEmptyIcon = icon && icon?.trim().length > 0;
+    return (
+      <span className={`${styles.triggerIcon}`}>
+        {icon && isNotEmptyIcon ? icon : <TooltipIcon />}
+      </span>
+    );
+  };
+
   return (
-    <div
+    <span
       className={createTooltipClassName()}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <span className={styles.trigger}>{<TriggerIcon iconContent={icon} />}</span>
-      {isTextVisible && <p className={`${styles.text}`}>{text}</p>}
-    </div>
+      {createTriggerIcon()}
+      {isTextVisible && (
+        <span className={`${styles.textWrapper}`}>
+          <span className={`${styles.text}`}>{text}</span>
+        </span>
+      )}
+    </span>
   );
 };

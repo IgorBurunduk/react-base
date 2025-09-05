@@ -5,39 +5,32 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
 
-.benefitHeader {
-  position: relative;
-  width: max-content;
-}
+  .benefitTitle {
+    font-size: 24px;
+    font-weight: 600;
+  }
 
-.benefitTitle {
-  display: inline-block;
-  font-size: 24px;
-  font-weight: 600;
-}
+  .benefitDescription {
+    font-size: 18px;
+    color: $text-color-tertiary;
+  }
 
-.benefitDescription {
-  font-size: 18px;
-  color: $text-color-tertiary;
-}
-
-.benefitTooltip {
-  position: absolute;
-  top: 0;
-  left: calc(100% + 10px);
+  .benefitTooltip {
+    margin: 0 10px;
+  }
 }
 
 @media (max-width: 1024px) {
   .benefitItem {
     align-items: center;
-  }
-  .benefitTitle {
-    font-size: 20px;
-  }
 
-  .benefitDescription {
-    text-align: center;
+    .benefitTitle {
+      font-size: 20px;
+    }
+
+    .benefitDescription {
+      text-align: center;
+    }
   }
 }

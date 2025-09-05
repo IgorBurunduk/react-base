@@ -86,7 +86,6 @@ export default [
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
 
       // Дополнительные правила
-      'no-unused-vars': 'warn',
       'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
       'jsx-quotes': ['error', 'prefer-double'],
       'arrow-body-style': 'off',

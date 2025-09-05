@@ -12,12 +12,13 @@ export const BenefitItem = ({
 }: BenefitItemProps) => {
   return (
     <div className={styles.benefitItem}>
-      <div className={styles.benefitHeader}>
-        <h3 className={styles.benefitTitle}>{subtitle}</h3>
+      <h3 className={styles.benefitTitle}>
+        {subtitle}
         {tooltip && tooltip?.trim().length > 0 ? (
           <Tooltip text={tooltip} additionalClassName={styles.benefitTooltip} />
         ) : null}
-      </div>
+      </h3>
+
       <p className={styles.benefitDescription}>{description}</p>
     </div>
   );
