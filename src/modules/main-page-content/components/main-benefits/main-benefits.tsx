@@ -1,7 +1,7 @@
 import { Container } from '@/components/container';
 import type { BenefitItemsType } from '@/types/benefits';
 
-import { BenefitItem } from './components/benefit-item';
+import { BenefitItem } from './components/benefit-item/benefit-item';
 
 import styles from './main-benefits.module.scss';
 

@@ -14,7 +14,9 @@ export const BenefitItem = ({
     <div className={styles.benefitItem}>
       <div className={styles.benefitHeader}>
         <h3 className={styles.benefitTitle}>{subtitle}</h3>
-        {tooltip ? <Tooltip text={tooltip} /> : null}
+        {tooltip && tooltip?.trim().length > 0 ? (
+          <Tooltip text={tooltip} additionalClassName={styles.benefitTooltip} />
+        ) : null}
       </div>
       <p className={styles.benefitDescription}>{description}</p>
     </div>
