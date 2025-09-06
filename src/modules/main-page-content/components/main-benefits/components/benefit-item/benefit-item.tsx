@@ -10,13 +10,12 @@ interface BenefitItemProps {
 export const BenefitItem = ({
   benefitProps: { subtitle, description, tooltip },
 }: BenefitItemProps) => {
+  const isHaveTooltip = tooltip && tooltip?.trim().length > 0;
   return (
     <div className={styles.benefitItem}>
       <h3 className={styles.benefitTitle}>
         {subtitle}
-        {tooltip && tooltip?.trim().length > 0 ? (
-          <Tooltip text={tooltip} additionalClassName={styles.benefitTooltip} />
-        ) : null}
+        {isHaveTooltip && <Tooltip text={tooltip} additionalClassName={styles.benefitTooltip} />}
       </h3>
 
       <p className={styles.benefitDescription}>{description}</p>
