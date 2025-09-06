@@ -1,9 +1,10 @@
 import { Container } from '@/components/container';
 import type { BenefitItemsType } from '@/types/benefits';
 
+import { BenefitItem } from './components/benefit-item/benefit-item';
+
 import styles from './main-benefits.module.scss';
 
-// eslint-disable-next-line no-unused-vars
 const benefitItems: BenefitItemsType = [
   {
     id: 1,
@@ -19,7 +20,7 @@ const benefitItems: BenefitItemsType = [
   },
   {
     id: 3,
-    subtitle: 'Практику ',
+    subtitle: 'Практику',
     description:
       'Возможность пройти практику по преподаванию робототехники на базе R:ED LAB (в оффлайн или онлайн формате)',
     tooltip: 'При наличии свободных мест',
@@ -32,7 +33,11 @@ export const MainBenefits = () => {
       <Container>
         <div className={styles.wrapper}>
           <h2 className={styles.title}>Что вы получите после курса</h2>
-          <div className={styles.items}>{/*Здесь должны быть отрисованы элементы*/}</div>
+          <div className={styles.items}>
+            {benefitItems.map((benefitItem) => (
+              <BenefitItem key={benefitItem.id} benefitProps={benefitItem} />
+            ))}
+          </div>
         </div>
       </Container>
     </section>
