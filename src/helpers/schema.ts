@@ -1,4 +1,4 @@
-import * as yup from 'yup'
+import * as yup from 'yup';
 
 export const ContactFormSchema = yup.object().shape({
   name: yup
@@ -14,4 +14,4 @@ export const ContactFormSchema = yup.object().shape({
     .string()
     .required('Email обязателен')
     .matches(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/, 'Введите корректный email'),
-})
+});
