@@ -3,15 +3,28 @@
 .inputWrapper {
   display: flex;
   flex-direction: column;
-  padding: 19px 20px;
-  border-radius: 5px;
-  background: $bg-color-primary;
   position: relative;
+
+  .inputLabel {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
 
   .inputText {
     color: $text-color-primary;
     font-size: 18px;
     line-height: normal;
+    padding: 19px 20px;
+    border-radius: 5px;
+    background: $bg-color-primary;
+  }
+
+  .inputTextError {
+    color: $text-color-accent;
   }
 
   .inputError {
