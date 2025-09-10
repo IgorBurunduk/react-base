@@ -17,14 +17,18 @@
   .inputText {
     color: $text-color-primary;
     font-size: 18px;
-    line-height: normal;
-    padding: 19px 20px;
+    padding: 18px 19px;
     border-radius: 5px;
     background: $bg-color-primary;
-  }
+    border: 1px solid $bg-color-primary;
 
-  .inputTextError {
-    color: $text-color-accent;
+    &:focus {
+      border-color: $bg-color-tertiary;
+    }
+
+    &.inputTextError {
+      border-color: $bg-color-accent;
+    }
   }
 
   .inputError {
@@ -33,6 +37,5 @@
     top: 5px;
     left: 20px;
     font-size: 12px;
-    line-height: 14px;
   }
 }
