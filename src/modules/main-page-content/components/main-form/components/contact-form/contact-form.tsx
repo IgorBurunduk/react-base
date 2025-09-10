@@ -17,7 +17,7 @@ interface ContactFormValues {
 }
 
 
-export const ContactForm = ({ additionalClassname, children, ...rest }: ContactFormProps) => {
+export const ContactForm = ({ additionalClassname, ...rest }: ContactFormProps) => {
   const {
     handleSubmit,
   } = useForm<ContactFormValues>();

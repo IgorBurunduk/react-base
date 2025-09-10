@@ -1,0 +1,25 @@
+@use '@/styles/variables.scss' as *;
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 19px 20px;
+  border-radius: 5px;
+  background: $bg-color-primary;
+  position: relative;
+
+  .inputText {
+    color: $text-color-primary;
+    font-size: 18px;
+    line-height: normal;
+  }
+
+  .inputError {
+    color: $text-color-accent;
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    font-size: 12px;
+    line-height: 14px;
+  }
+}

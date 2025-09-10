@@ -31,6 +31,10 @@
         margin-top: 20px;
       }
     }
+
+    .contactForm {
+      max-width: 500px;
+    }
   }
 }
 
@@ -60,6 +64,7 @@
       .text {
         align-items: center;
         margin-top: 20px;
+        text-align: center;
 
         .title {
           font-size: 30px;
@@ -68,6 +73,10 @@
         .description {
           font-size: 16px;
         }
+      }
+
+      .contactForm {
+        margin-top: 30px;
       }
     }
   }
