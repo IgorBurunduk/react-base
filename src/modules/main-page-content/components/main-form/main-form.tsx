@@ -13,7 +13,7 @@ export const MainForm = () => {
             <h2 className={styles.title}>Запишитесь на курс со скидкой 10%</h2>
             <p className={styles.description}>Акция действительна до 10 марта 2022 года</p>
           </div>
-          <ContactForm additionalClassname={styles.contactForm} />
+          <ContactForm />
         </div>
       </Container>
     </section>

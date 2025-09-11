@@ -1,4 +1,3 @@
-import { type FormHTMLAttributes } from 'react';
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import type * as yup from 'yup';
@@ -9,13 +8,9 @@ import { ContactFormSchema } from '@/helpers/schema';
 
 import styles from './contact-form.module.scss';
 
-interface ContactFormProps extends FormHTMLAttributes<HTMLFormElement> {
-  additionalClassname?: string;
-}
-
 type ContactFormData = yup.InferType<typeof ContactFormSchema>;
 
-export const ContactForm = ({ additionalClassname, ...rest }: ContactFormProps) => {
+export const ContactForm = () => {
   const {
     register,
     handleSubmit,
@@ -24,41 +19,33 @@ export const ContactForm = ({ additionalClassname, ...rest }: ContactFormProps) 
   } = useForm<ContactFormData>({
     resolver: yupResolver(ContactFormSchema),
   });
-
   const handleContactFormSubmit = (data: ContactFormData) => {
     console.log('Отправленные данные:', data);
     reset();
   };
 
   return (
-    <form
-      onSubmit={handleSubmit(handleContactFormSubmit)}
-      className={`${styles.contactForm} ${Boolean(additionalClassname) && additionalClassname}`}
-      {...rest}
-    >
+    <form onSubmit={handleSubmit(handleContactFormSubmit)} className={`${styles.contactForm}`}>
       <FormInput
-        label={'Введите имя'}
-        placeholder={'Имя'}
-        name={'name'}
-        register={register}
+        label="Введите имя"
+        placeholder="Имя"
+        name="name"
         error={errors.name?.message}
-        autoCompleteInput={true}
+        register={register}
       />
       <FormInput
-        label={'Введите телефон'}
-        placeholder={'Телефон'}
-        name={'phone'}
+        label="Введите телефон"
+        placeholder="Телефон"
+        name="phone"
         register={register}
         error={errors.phone?.message}
-        autoCompleteInput={true}
       />
       <FormInput
-        label={'Введите Email'}
-        placeholder={'E-mail'}
-        name={'email'}
+        label="Введите Email"
+        placeholder="E-mail"
+        name="email"
         register={register}
         error={errors.email?.message}
-        autoCompleteInput={true}
       />
       <Button variant={'secondary'} additionalClassname={styles.contactFormButton}>
         Оформить заявку

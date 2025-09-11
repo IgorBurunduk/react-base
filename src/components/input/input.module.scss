@@ -1,11 +1,9 @@
 @use '@/styles/variables.scss' as *;
 
-.inputWrapper {
-  display: flex;
-  flex-direction: column;
+.wrapper {
   position: relative;
 
-  .inputLabel {
+  .label {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -14,24 +12,25 @@
     overflow: hidden;
   }
 
-  .inputText {
+  .input {
     color: $text-color-primary;
     font-size: 18px;
     padding: 18px 19px;
     border-radius: 5px;
     background: $bg-color-primary;
     border: 1px solid $bg-color-primary;
+    width: 100%;
 
     &:focus {
       border-color: $bg-color-tertiary;
     }
 
-    &.inputTextError {
+    &.inputError {
       border-color: $bg-color-accent;
     }
   }
 
-  .inputError {
+  .error {
     color: $text-color-accent;
     position: absolute;
     top: 5px;

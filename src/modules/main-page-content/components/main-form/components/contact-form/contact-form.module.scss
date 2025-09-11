@@ -3,6 +3,12 @@
   flex-direction: column;
   gap: 10px;
   flex-basis: 100%;
+  max-width: 500px;
+
+  .contactFormButton {
+    padding: 19px 54px;
+    line-height: normal;
+  }
 
   @media (max-width: 768px) {
     .contactFormButton {
