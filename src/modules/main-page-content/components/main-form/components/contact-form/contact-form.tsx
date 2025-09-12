@@ -3,12 +3,16 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import type * as yup from 'yup';
 
 import { Button } from '@/components/button/button';
-import { FormInput } from '@/components/input/components/form-input/form-input';
+import { Input } from '@/components/input/input';
 import { ContactFormSchema } from '@/helpers/schema';
 
 import styles from './contact-form.module.scss';
 
-type ContactFormData = yup.InferType<typeof ContactFormSchema>;
+type ContactFormData = {
+  name: string;
+  phone: string;
+  email: string;
+};
 
 export const ContactForm = () => {
   const {
@@ -26,26 +30,23 @@ export const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit(handleContactFormSubmit)} className={`${styles.contactForm}`}>
-      <FormInput
+      <Input
         label="Введите имя"
         placeholder="Имя"
-        name="name"
         error={errors.name?.message}
-        register={register}
+        {...register('name')}
       />
-      <FormInput
+      <Input
         label="Введите телефон"
         placeholder="Телефон"
-        name="phone"
-        register={register}
+        {...register('phone')}
         error={errors.phone?.message}
       />
-      <FormInput
+      <Input
         label="Введите Email"
         placeholder="E-mail"
-        name="email"
-        register={register}
         error={errors.email?.message}
+        {...register('email')}
       />
       <Button variant={'secondary'} additionalClassname={styles.contactFormButton}>
         Оформить заявку
