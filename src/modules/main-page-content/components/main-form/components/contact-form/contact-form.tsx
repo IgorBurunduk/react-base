@@ -39,8 +39,8 @@ export const ContactForm = () => {
       <Input
         label="Введите телефон"
         placeholder="Телефон"
-        {...register('phone')}
         error={errors.phone?.message}
+        {...register('phone')}
       />
       <Input
         label="Введите Email"
