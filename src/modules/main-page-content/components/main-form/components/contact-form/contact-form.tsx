@@ -1,6 +1,5 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
-import type * as yup from 'yup';
 
 import { Button } from '@/components/button/button';
 import { Input } from '@/components/input/input';
@@ -29,7 +28,7 @@ export const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(handleContactFormSubmit)} className={`${styles.contactForm}`}>
+    <form onSubmit={handleSubmit(handleContactFormSubmit)} className={styles.contactForm}>
       <Input
         label="Введите имя"
         placeholder="Имя"

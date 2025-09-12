@@ -25,12 +25,12 @@
       border-color: $bg-color-tertiary;
     }
 
-    &.inputError {
+    &.error {
       border-color: $bg-color-accent;
     }
   }
 
-  .error {
+  .errorText {
     color: $text-color-accent;
     position: absolute;
     top: 5px;

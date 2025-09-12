@@ -25,14 +25,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     };
 
     return (
-      <span className={`${styles.wrapper}`}>
+      <span className={styles.wrapper}>
         {Boolean(rest.label) && (
-          <label className={`${styles.label}`} htmlFor={inputId}>
+          <label className={styles.label} htmlFor={inputId}>
             {rest.label}
           </label>
         )}
         <input id={inputId} className={createInputClassNames()} ref={forwardedInput} {...rest} />
-        {error && <span className={`${styles.error}`}>{error}</span>}
+        {error && <span className={styles.error}>{error}</span>}
       </span>
     );
   },
