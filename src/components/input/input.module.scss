@@ -1,0 +1,40 @@
+@use '@/styles/variables.scss' as *;
+
+.wrapper {
+  position: relative;
+
+  .label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  .input {
+    color: $text-color-primary;
+    font-size: 18px;
+    padding: 18px 19px;
+    border-radius: 5px;
+    background: $bg-color-primary;
+    border: 1px solid $bg-color-primary;
+    width: 100%;
+
+    &:focus {
+      border-color: $bg-color-tertiary;
+    }
+
+    &.error {
+      border-color: $bg-color-accent;
+    }
+  }
+
+  .errorText {
+    color: $text-color-accent;
+    position: absolute;
+    top: 5px;
+    left: 20px;
+    font-size: 12px;
+  }
+}
