@@ -19,7 +19,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       }
 
       if (error) {
-        inputClass = `${styles.input} ${styles.inputError}`;
+        inputClass = `${styles.input} ${styles.error}`;
       }
       return inputClass;
     };
@@ -32,7 +32,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
           </label>
         )}
         <input id={inputId} className={createInputClassNames()} ref={forwardedInput} {...rest} />
-        {error && <span className={styles.error}>{error}</span>}
+        {error && <span className={styles.errorText}>{error}</span>}
       </span>
     );
   },
