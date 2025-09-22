@@ -1,0 +1,45 @@
+@use '@/styles/variables.scss' as *;
+
+.teacherItem {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 360px;
+
+  .teacherItemPhoto {
+    border-radius: 20px;
+  }
+
+  .teacherItemName {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .teacherItemDescription {
+    color: $text-color-tertiary;
+    margin-bottom: 10px;
+  }
+
+  .teacherItemLink {
+    color: $text-color-accent;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .teacherItem {
+    max-width: 220px;
+
+    .teacherItemName {
+      font-size: 20px;
+    }
+
+    .teacherItemDescription {
+      font-size: 14px;
+    }
+
+    .teacherItemLink {
+      font-size: 16px;
+    }
+  }
+}
