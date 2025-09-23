@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef } from 'react';
 import { Scrollbar } from 'swiper/modules';
-import {Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper/types';
 import 'swiper/css';
 
@@ -70,10 +70,18 @@ export const MainTeachers = () => {
             <div ref={scrollbarRef} className={styles.sliderScrollbar}></div>
             {!isMobile && (
               <div className={styles.sliderButtons}>
-                <Button variant={'text'} onClick={createSlideChangeHandler('prev')} additionalClassname={styles.sliderButton}>
+                <Button
+                  variant={'text'}
+                  onClick={createSlideChangeHandler('prev')}
+                  additionalClassname={styles.sliderButton}
+                >
                   <ArrowLeftIcon />
                 </Button>
-                <Button variant={'text'} onClick={createSlideChangeHandler('next')} additionalClassname={styles.sliderButton}>
+                <Button
+                  variant={'text'}
+                  onClick={createSlideChangeHandler('next')}
+                  additionalClassname={styles.sliderButton}
+                >
                   <ArrowRightIcon />
                 </Button>
               </div>
