@@ -1,5 +1,7 @@
 import { useContext, useEffect, useRef } from 'react';
-import { Swiper, type SwiperClass, SwiperSlide } from 'swiper/react';
+import { Scrollbar } from 'swiper/modules';
+import {Swiper, SwiperSlide } from 'swiper/react';
+import type { Swiper as SwiperType } from 'swiper/types';
 import 'swiper/css';
 
 import { ArrowLeftIcon } from '@/assets/icons/ArrowLeftIcon';
@@ -12,13 +14,12 @@ import { MainPageContext } from '@/store/main-page';
 import { TeacherItem } from './components/teacher-item/teacher-item';
 
 import styles from './main-teachers.module.scss';
-import { Navigation, Scrollbar } from 'swiper/modules';
 
 export const MainTeachers = () => {
   const teachers = useContext(MainPageContext);
-  const swiperRef = useRef<SwiperClass | null>(null);
+  const swiperRef = useRef<SwiperType | null>(null);
   const scrollbarRef = useRef<HTMLDivElement | null>(null);
-  const initSwiper = (swiperInstance: SwiperClass) => {
+  const initSwiper = (swiperInstance: SwiperType) => {
     swiperRef.current = swiperInstance;
   };
   const { width } = useWindowSize();
