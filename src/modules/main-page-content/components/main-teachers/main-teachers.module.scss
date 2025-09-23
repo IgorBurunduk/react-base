@@ -9,15 +9,12 @@
       font-size: 50px;
       font-weight: 600;
     }
-    .content {
+    .slider {
       margin-top: 60px;
+      overflow: visible;
 
-      .slider {
-        overflow: visible;
-
-        .slide{
-          width: max-content;
-        }
+      .slide{
+        width: max-content;
       }
     }
   }
@@ -41,7 +38,7 @@
       .title {
         font-size: 30px;
       }
-      .content {
+      .slider {
         margin-top: 40px;
       }
     }

@@ -3,6 +3,7 @@
 .teacherItem {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
   max-width: 360px;
 
@@ -23,6 +24,10 @@
   .teacherItemLink {
     color: $text-color-accent;
     text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
