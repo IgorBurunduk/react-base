@@ -2,11 +2,23 @@
 
 .teachers {
   padding-bottom: 0;
+  overflow: hidden;
 
   .wrapper {
     .title {
       font-size: 50px;
       font-weight: 600;
+    }
+    .content {
+      margin-top: 60px;
+
+      .slider {
+        overflow: visible;
+
+        .slide{
+          width: max-content;
+        }
+      }
     }
   }
 }
@@ -28,6 +40,9 @@
     .wrapper {
       .title {
         font-size: 30px;
+      }
+      .content {
+        margin-top: 40px;
       }
     }
   }
