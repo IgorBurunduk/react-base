@@ -2,56 +2,54 @@
 
 .teachers {
   padding-bottom: 0;
-  overflow: hidden;
 
-  .wrapper {
-    .title {
-      font-size: 50px;
-      font-weight: 600;
+  .title {
+    font-size: 50px;
+    font-weight: 600;
+  }
+
+  .slider {
+    margin-top: 60px;
+
+    .slide {
+      width: max-content;
     }
-    .slider {
-      margin-top: 60px;
-      overflow: visible;
+  }
 
-      .slide {
-        width: max-content;
-      }
-    }
+  .sliderControllers {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
 
-    .sliderControllers {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-top: 60px;
+    .scrollbar {
+      width: 100%;
+      max-width: 360px;
+      height: 5px;
+      border-radius: 40px;
+      background: $bg-color-quaternary;
 
-      .sliderScrollbar {
-        width: 100%;
-        max-width: 360px;
-        height: 5px;
+      .scrollbarDrag {
         border-radius: 40px;
-        background: $bg-color-quaternary;
+        background: $bg-color-tertiary;
+        height: 5px;
+        transition: opacity 0.3s ease;
+        cursor: grab;
 
-        .sliderScrollbarDrag {
-          border-radius: 40px;
-          background: $bg-color-tertiary;
-          height: 5px;
-          transition: opacity 0.3s ease;
-          cursor: grab;
-          &:hover {
-            opacity: 0.7;
-          }
+        &:hover {
+          opacity: 0.7;
         }
       }
+    }
 
-      .sliderButtons {
-        display: flex;
-        gap: 15px;
-        transition: opacity 0.3s ease;
+    .buttons {
+      display: flex;
+      gap: 15px;
+      transition: opacity 0.3s ease;
 
-        .sliderButton {
-          &:hover {
-            opacity: 0.7;
-          }
+      .button {
+        &:hover {
+          opacity: 0.7;
         }
       }
     }
@@ -61,10 +59,9 @@
 @media (max-width: 1024px) {
   .teachers {
     padding: 60px 0 0 0;
-    .wrapper {
-      .title {
-        text-align: center;
-      }
+
+    .title {
+      text-align: center;
     }
   }
 }
@@ -72,18 +69,21 @@
 @media (max-width: 768px) {
   .teachers {
     padding-top: 40px;
-    .wrapper {
-      .title {
-        font-size: 30px;
-      }
-      .slider {
-        margin-top: 40px;
-      }
 
-      .sliderControllers {
-        .sliderScrollbar {
-          max-width: 100%;
-        }
+    .title {
+      font-size: 30px;
+    }
+
+    .slider {
+      margin-top: 40px;
+      margin-left: -10px;
+      margin-right: -10px;
+      padding: 0 10px;
+    }
+
+    .sliderControllers {
+      .scrollbar {
+        max-width: 100%;
       }
     }
   }

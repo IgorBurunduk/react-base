@@ -1,5 +1,4 @@
 import { useContext, useEffect, useRef } from 'react';
-import { Scrollbar } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper/types';
 import 'swiper/css';
@@ -12,6 +11,7 @@ import { useWindowSize } from '@/hooks/useWindowSize';
 import { MainPageContext } from '@/store/main-page';
 
 import { TeacherItem } from './components/teacher-item/teacher-item';
+import { createSwiperConfig } from './lib/swiperConfig';
 
 import styles from './main-teachers.module.scss';
 
@@ -19,11 +19,7 @@ export const MainTeachers = () => {
   const teachers = useContext(MainPageContext);
   const swiperRef = useRef<SwiperType | null>(null);
   const scrollbarRef = useRef<HTMLDivElement | null>(null);
-  const initSwiper = (swiperInstance: SwiperType) => {
-    swiperRef.current = swiperInstance;
-  };
-  const { width } = useWindowSize();
-  const isMobile = width <= 768;
+  const { isMobile } = useWindowSize();
 
   useEffect(() => {
     if (swiperRef.current && scrollbarRef.current) {
@@ -43,50 +39,45 @@ export const MainTeachers = () => {
     swiperRef.current.slidePrev();
   };
 
+  const initSwiper = (swiperInstance: SwiperType) => {
+    swiperRef.current = swiperInstance;
+  };
+
   return (
     <section className={styles.teachers}>
       <Container>
-        <div className={styles.wrapper}>
-          <h2 className={styles.title}>Профессиональные тренеры</h2>
-          <Swiper
-            onBeforeInit={initSwiper}
-            modules={[Scrollbar]}
-            spaceBetween={40}
-            slidesPerView={'auto'}
-            className={styles.slider}
-            scrollbar={{
-              draggable: true,
-              el: scrollbarRef.current,
-              dragClass: styles.sliderScrollbarDrag,
-            }}
-          >
-            {teachers.teachersList.map((teacherItem) => (
-              <SwiperSlide key={teacherItem.id} className={styles.slide}>
-                <TeacherItem {...teacherItem} />
-              </SwiperSlide>
-            ))}
-          </Swiper>
-          <div className={styles.sliderControllers}>
-            <div ref={scrollbarRef} className={styles.sliderScrollbar}></div>
-            {!isMobile && (
-              <div className={styles.sliderButtons}>
-                <Button
-                  variant={'text'}
-                  onClick={createSlideChangeHandler('prev')}
-                  additionalClassname={styles.sliderButton}
-                >
-                  <ArrowLeftIcon />
-                </Button>
-                <Button
-                  variant={'text'}
-                  onClick={createSlideChangeHandler('next')}
-                  additionalClassname={styles.sliderButton}
-                >
-                  <ArrowRightIcon />
-                </Button>
-              </div>
-            )}
-          </div>
+        <h2 className={styles.title}>Профессиональные тренеры</h2>
+        <Swiper
+          className={styles.slider}
+          onBeforeInit={initSwiper}
+          {...createSwiperConfig(scrollbarRef.current, styles.scrollbarDrag)}
+        >
+          {teachers.teachersList.map((teacherItem) => (
+            <SwiperSlide key={teacherItem.id} className={styles.slide}>
+              <TeacherItem teacherItem={teacherItem} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+        <div className={styles.sliderControllers}>
+          <div ref={scrollbarRef} className={styles.scrollbar}></div>
+          {!isMobile && (
+            <div className={styles.buttons}>
+              <Button
+                variant={'text'}
+                onClick={createSlideChangeHandler('prev')}
+                additionalClassname={styles.button}
+              >
+                <ArrowLeftIcon />
+              </Button>
+              <Button
+                variant={'text'}
+                onClick={createSlideChangeHandler('next')}
+                additionalClassname={styles.button}
+              >
+                <ArrowRightIcon />
+              </Button>
+            </div>
+          )}
         </div>
       </Container>
     </section>

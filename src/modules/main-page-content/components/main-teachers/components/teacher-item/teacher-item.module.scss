@@ -7,21 +7,21 @@
   gap: 20px;
   max-width: 360px;
 
-  .teacherItemPhoto {
+  .photo {
     border-radius: 20px;
   }
 
-  .teacherItemName {
+  .name {
     font-size: 24px;
     font-weight: 600;
   }
 
-  .teacherItemDescription {
+  .description {
     color: $text-color-tertiary;
     margin-bottom: 10px;
   }
 
-  .teacherItemLink {
+  .button {
     color: $text-color-accent;
     text-decoration: none;
 
@@ -35,15 +35,15 @@
   .teacherItem {
     max-width: 220px;
 
-    .teacherItemName {
+    .name {
       font-size: 20px;
     }
 
-    .teacherItemDescription {
+    .description {
       font-size: 14px;
     }
 
-    .teacherItemLink {
+    .button {
       font-size: 16px;
     }
   }

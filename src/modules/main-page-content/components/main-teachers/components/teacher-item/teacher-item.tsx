@@ -1,21 +1,28 @@
 import { teachersImages } from '@/assets/images';
-import { Link } from '@/components/link';
-import type { TeacherListType } from '@/types/teacher';
+import { Button } from '@/components/button/button';
 
 import styles from './teacher-item.module.scss';
 
-export const TeacherItem = ({ id, name, imageSrc, description }: TeacherListType) => {
+interface TeacherItemType {
+  teacherItem: {
+    name: string;
+    imageSrc: string;
+    description: string;
+  };
+}
+
+export const TeacherItem = (teacherItem: TeacherItemType) => {
+  const { name, imageSrc, description } = teacherItem.teacherItem;
   const teacherImageSrc = teachersImages[imageSrc as keyof typeof teachersImages];
 
   return (
     <div className={styles.teacherItem}>
-      <img src={teacherImageSrc} alt={name} className={styles.teacherItemPhoto} />
-      <h3 className={styles.teacherItemName}>{name}</h3>
-      <p className={styles.teacherItemDescription}>{description}</p>
-      <Link
-        href={`/teacher/${id}`}
-        additionalClassname={styles.teacherItemLink}
-      >{`Подробнее`}</Link>
+      <img src={teacherImageSrc} alt={name} className={styles.photo} />
+      <h3 className={styles.name}>{name}</h3>
+      <p className={styles.description}>{description}</p>
+      <Button variant="text" additionalClassname={styles.button}>
+        Подробнее
+      </Button>
     </div>
   );
 };
