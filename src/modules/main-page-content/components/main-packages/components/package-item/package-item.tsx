@@ -1,4 +1,4 @@
-import { Button } from '@/components/button/button';
+import { Button } from '@/components/button';
 import type { PackageItemType } from '@/types/packages';
 
 import styles from './package-item.module.scss';

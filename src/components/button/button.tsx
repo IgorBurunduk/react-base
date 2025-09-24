@@ -1,16 +1,18 @@
-import type { ButtonHTMLAttributes } from 'react';
+import type { ButtonHTMLAttributes, MutableRefObject } from 'react';
 
 import styles from './button.module.scss';
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: 'primary' | 'secondary' | 'text';
   additionalClassname?: string;
+  buttonRef?: MutableRefObject<HTMLButtonElement | null>;
 }
 
 export const Button = ({
   variant = 'primary',
   additionalClassname,
   children,
+  buttonRef,
   ...rest
 }: ButtonProps) => {
   const createButtonVariant = () => {
@@ -35,7 +37,7 @@ export const Button = ({
   };
 
   return (
-    <button className={createButtonClassname()} {...rest}>
+    <button ref={buttonRef} className={createButtonClassname()} {...rest}>
       {children}
     </button>
   );

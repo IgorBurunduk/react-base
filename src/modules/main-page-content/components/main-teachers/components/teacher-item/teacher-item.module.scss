@@ -1,0 +1,50 @@
+@use '@/styles/variables.scss' as *;
+
+.teacherItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 360px;
+
+  .photo {
+    border-radius: 20px;
+  }
+
+  .name {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .description {
+    color: $text-color-tertiary;
+    margin-bottom: 10px;
+  }
+
+  .button {
+    color: $text-color-accent;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .teacherItem {
+    max-width: 220px;
+
+    .name {
+      font-size: 20px;
+    }
+
+    .description {
+      font-size: 14px;
+    }
+
+    .button {
+      font-size: 16px;
+    }
+  }
+}

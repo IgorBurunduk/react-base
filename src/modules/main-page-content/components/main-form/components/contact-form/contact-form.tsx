@@ -1,8 +1,8 @@
 import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import { Button } from '@/components/button/button';
-import { Input } from '@/components/input/input';
+import { Button } from '@/components/button';
+import { Input } from '@/components/input';
 import { ContactFormSchema } from '@/helpers/schema';
 
 import styles from './contact-form.module.scss';
