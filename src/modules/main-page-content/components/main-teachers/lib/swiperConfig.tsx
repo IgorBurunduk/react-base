@@ -6,6 +6,7 @@ export const createSwiperConfig = (
   dragClass?: string,
   buttonPrevEl?: HTMLElement | null,
   buttonNextEl?: HTMLElement | null,
+  isMobile?: boolean,
 ): SwiperOptions => {
   return {
     scrollbar: {
@@ -14,7 +15,7 @@ export const createSwiperConfig = (
       dragClass,
     },
     spaceBetween: 40,
-    slidesPerView: 'auto',
+    slidesPerView: isMobile ? 'auto' : 3,
     modules: [Scrollbar, Navigation],
     navigation: {
       prevEl: buttonPrevEl,

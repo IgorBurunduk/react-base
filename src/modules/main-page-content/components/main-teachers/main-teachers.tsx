@@ -32,6 +32,7 @@ export const MainTeachers = () => {
             styles.scrollbarDrag,
             buttonPrevRef.current,
             buttonNextRef.current,
+            isMobile,
           )}
         >
           {teachers.teachersList.map((teacherItem) => (
