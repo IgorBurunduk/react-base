@@ -1,5 +1,5 @@
 import { Navigation, Scrollbar } from 'swiper/modules';
-import type { Swiper as SwiperType, SwiperOptions } from 'swiper/types';
+import type { SwiperOptions } from 'swiper/types';
 
 export const createSwiperConfig = (
   scrollbarEl?: HTMLElement | null,

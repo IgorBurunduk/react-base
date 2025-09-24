@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import type { Swiper as SwiperType, SwiperOptions } from 'swiper/types';
+import type { Swiper as SwiperType } from 'swiper/types';
 import 'swiper/css';
 
 import { ArrowLeftIcon } from '@/assets/icons/ArrowLeftIcon';
