@@ -1,11 +1,9 @@
 import { Navigation, Scrollbar } from 'swiper/modules';
-import type { SwiperOptions } from 'swiper/types';
+import type { Swiper as SwiperType, SwiperOptions } from 'swiper/types';
 
 export const createSwiperConfig = (
   scrollbarEl?: HTMLElement | null,
   dragClass?: string,
-  buttonPrevEl?: HTMLElement | null,
-  buttonNextEl?: HTMLElement | null,
   isMobile?: boolean,
 ): SwiperOptions => {
   return {
@@ -17,9 +15,5 @@ export const createSwiperConfig = (
     spaceBetween: 40,
     slidesPerView: isMobile ? 'auto' : 3,
     modules: [Scrollbar, Navigation],
-    navigation: {
-      prevEl: buttonPrevEl,
-      nextEl: buttonNextEl,
-    },
   };
 };

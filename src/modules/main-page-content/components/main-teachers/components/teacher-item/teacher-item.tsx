@@ -1,14 +1,11 @@
 import { teachersImages } from '@/assets/images';
 import { Button } from '@/components/button/button';
+import type { TeacherListType } from '@/types/teacher';
 
 import styles from './teacher-item.module.scss';
 
 interface TeacherItemType {
-  teacherItem: {
-    name: string;
-    imageSrc: string;
-    description: string;
-  };
+  teacherItem: Pick<TeacherListType, 'name' | 'imageSrc' | 'description'>;
 }
 
 export const TeacherItem = (teacherItem: TeacherItemType) => {
