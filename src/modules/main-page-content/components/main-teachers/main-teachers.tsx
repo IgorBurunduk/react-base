@@ -1,6 +1,5 @@
-import { useContext, useEffect, useRef } from 'react';
+import { useContext, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import type { Swiper as SwiperType } from 'swiper/types';
 import 'swiper/css';
 
 import { ArrowLeftIcon } from '@/assets/icons/ArrowLeftIcon';
@@ -17,26 +16,10 @@ import styles from './main-teachers.module.scss';
 
 export const MainTeachers = () => {
   const teachers = useContext(MainPageContext);
-  const swiperRef = useRef<SwiperType | null>(null);
   const scrollbarRef = useRef<HTMLDivElement | null>(null);
   const buttonNextRef = useRef<HTMLButtonElement | null>(null);
   const buttonPrevRef = useRef<HTMLButtonElement | null>(null);
   const { isMobile } = useWindowSize();
-
-  useEffect(() => {
-    if (
-      swiperRef.current &&
-      scrollbarRef.current &&
-      buttonNextRef.current &&
-      buttonPrevRef.current
-    ) {
-      swiperRef.current.update();
-    }
-  }, [teachers]);
-
-  const initSwiper = (swiperInstance: SwiperType) => {
-    swiperRef.current = swiperInstance;
-  };
 
   return (
     <section className={styles.teachers}>
@@ -49,7 +32,6 @@ export const MainTeachers = () => {
             styles.scrollbarDrag,
             buttonPrevRef.current,
             buttonNextRef.current,
-            initSwiper,
           )}
         >
           {teachers.teachersList.map((teacherItem) => (

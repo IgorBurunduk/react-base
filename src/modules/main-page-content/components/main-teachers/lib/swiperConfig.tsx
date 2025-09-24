@@ -1,12 +1,11 @@
 import { Navigation, Scrollbar } from 'swiper/modules';
-import type { Swiper, SwiperOptions } from 'swiper/types';
+import type { SwiperOptions } from 'swiper/types';
 
 export const createSwiperConfig = (
   scrollbarEl?: HTMLElement | null,
   dragClass?: string,
   buttonPrevEl?: HTMLElement | null,
   buttonNextEl?: HTMLElement | null,
-  initSwiper?: (swiper: Swiper) => void,
 ): SwiperOptions => {
   return {
     scrollbar: {
@@ -20,9 +19,6 @@ export const createSwiperConfig = (
     navigation: {
       prevEl: buttonPrevEl,
       nextEl: buttonNextEl,
-    },
-    on: {
-      beforeInit: initSwiper,
     },
   };
 };
