@@ -3,10 +3,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import type { Swiper as SwiperType } from 'swiper/types';
 import 'swiper/css';
 
-import { ArrowLeftIcon } from '@/assets/icons/ArrowLeftIcon';
-import { ArrowRightIcon } from '@/assets/icons/ArrowRightIcon';
-import { Button } from '@/components/button/button';
-import { Container } from '@/components/container';
+import { ArrowLeftIcon , ArrowRightIcon} from '@/assets/icons';
+import { Button, Container } from '@/components';
 import { useWindowSize } from '@/hooks/useWindowSize';
 import { MainPageContext } from '@/store/main-page';
 
@@ -48,6 +46,7 @@ export const MainTeachers = () => {
       scrollbar: {
         el: scrollbarRef.current,
         dragClass: styles.scrollbarDrag,
+        draggable: true,
       },
     }, isMobile});
 

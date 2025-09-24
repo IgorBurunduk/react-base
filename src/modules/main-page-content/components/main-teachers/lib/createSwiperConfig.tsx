@@ -10,9 +10,6 @@ export const createSwiperConfig = ({ swiperConfig, isMobile }: swiperConfigType)
   return {
     spaceBetween: 40,
     slidesPerView: isMobile ? 'auto' : 3,
-    scrollbar: {
-      draggable: true,
-    },
     modules: [Scrollbar],
     ...swiperConfig,
   };
