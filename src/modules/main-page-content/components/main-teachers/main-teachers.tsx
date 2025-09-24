@@ -11,7 +11,7 @@ import { useWindowSize } from '@/hooks/useWindowSize';
 import { MainPageContext } from '@/store/main-page';
 
 import { TeacherItem } from './components/teacher-item/teacher-item';
-import { createSwiperConfig } from './lib/swiperConfig';
+import { createSwiperConfig } from './lib/createSwiperConfig';
 
 import styles from './main-teachers.module.scss';
 
@@ -43,6 +43,14 @@ export const MainTeachers = () => {
   const initSwiper = (swiperInstance: SwiperType) => {
     swiperRef.current = swiperInstance;
   };
+
+  const swiperConfig  = createSwiperConfig({swiperConfig : {
+      scrollbar: {
+        el: scrollbarRef.current,
+        dragClass: styles.scrollbarDrag,
+      },
+    }, isMobile});
+
   return (
     <section className={styles.teachers}>
       <Container>
@@ -50,7 +58,10 @@ export const MainTeachers = () => {
         <Swiper
           className={styles.slider}
           onBeforeInit={initSwiper}
-          {...createSwiperConfig(scrollbarRef.current, styles.scrollbarDrag, isMobile)}
+          spaceBetween={swiperConfig.spaceBetween}
+          scrollbar={swiperConfig.scrollbar}
+          slidesPerView={swiperConfig.slidesPerView}
+          modules={swiperConfig.modules}
         >
           {teachers.teachersList.map((teacherItem) => (
             <SwiperSlide key={teacherItem.id} className={styles.slide}>
