@@ -1,6 +1,6 @@
 import { Container } from '@/components/container';
 
-import { ContactForm } from './components/contact-form/contact-form';
+import { ContactForm } from './components/contact-form';
 
 import styles from './main-form.module.scss';
 

@@ -4,7 +4,8 @@ import type { Swiper as SwiperType } from 'swiper/types';
 import 'swiper/css';
 
 import { ArrowLeftIcon, ArrowRightIcon } from '@/assets/icons';
-import { Button, Container } from '@/components';
+import { Button } from '@/components/button';
+import { Container } from '@/components/container';
 import { useWindowSize } from '@/hooks/useWindowSize';
 import { MainPageContext } from '@/store/main-page';
 
