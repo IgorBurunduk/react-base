@@ -19,25 +19,20 @@ export const MainTeachers = () => {
   const teachers = useContext(MainPageContext);
   const swiperRef = useRef<SwiperType | null>(null);
   const scrollbarRef = useRef<HTMLDivElement | null>(null);
+  const buttonNextRef = useRef<HTMLButtonElement | null>(null);
+  const buttonPrevRef = useRef<HTMLButtonElement | null>(null);
   const { isMobile } = useWindowSize();
 
   useEffect(() => {
-    if (swiperRef.current && scrollbarRef.current) {
+    if (
+      swiperRef.current &&
+      scrollbarRef.current &&
+      buttonNextRef.current &&
+      buttonPrevRef.current
+    ) {
       swiperRef.current.update();
     }
   }, [teachers]);
-
-  const createSlideChangeHandler = (direction: 'next' | 'prev') => () => {
-    if (!swiperRef.current) {
-      return;
-    }
-    if (direction === 'next') {
-      swiperRef.current.slideNext();
-      return;
-    }
-
-    swiperRef.current.slidePrev();
-  };
 
   const initSwiper = (swiperInstance: SwiperType) => {
     swiperRef.current = swiperInstance;
@@ -49,8 +44,13 @@ export const MainTeachers = () => {
         <h2 className={styles.title}>Профессиональные тренеры</h2>
         <Swiper
           className={styles.slider}
-          onBeforeInit={initSwiper}
-          {...createSwiperConfig(scrollbarRef.current, styles.scrollbarDrag)}
+          {...createSwiperConfig(
+            scrollbarRef.current,
+            styles.scrollbarDrag,
+            buttonPrevRef.current,
+            buttonNextRef.current,
+            initSwiper,
+          )}
         >
           {teachers.teachersList.map((teacherItem) => (
             <SwiperSlide key={teacherItem.id} className={styles.slide}>
@@ -64,14 +64,14 @@ export const MainTeachers = () => {
             <div className={styles.buttons}>
               <Button
                 variant={'text'}
-                onClick={createSlideChangeHandler('prev')}
+                buttonRef={buttonPrevRef}
                 additionalClassname={styles.button}
               >
                 <ArrowLeftIcon />
               </Button>
               <Button
                 variant={'text'}
-                onClick={createSlideChangeHandler('next')}
+                buttonRef={buttonNextRef}
                 additionalClassname={styles.button}
               >
                 <ArrowRightIcon />
