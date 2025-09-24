@@ -8,7 +8,7 @@ interface swiperConfigType {
 
 export const createSwiperConfig = ({ swiperConfig, isMobile }: swiperConfigType): SwiperOptions => {
   return {
-    spaceBetween: 40,
+    spaceBetween: isMobile ? 20 : 40,
     slidesPerView: isMobile ? 'auto' : 3,
     modules: [Scrollbar],
     ...swiperConfig,
