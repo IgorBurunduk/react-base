@@ -1,7 +1,7 @@
-@use '@/styles/variables.scss' as *;
+@use '@/styles/variables' as *;
 
-.teacherModal {
-  .teacherInfo {
+.teacherInfo {
+  .introduction {
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto 1fr;
@@ -10,24 +10,24 @@
     padding-right: 70px;
   }
 
-  .teacherPhoto {
+  .photo {
     max-width: 160px;
     grid-row-end: span 3;
   }
 
-  .teacherName {
+  .name {
     font-size: 24px;
     font-weight: 600;
     color: $text-color-primary;
   }
 
-  .teacherDescription {
+  .description {
     font-size: 18px;
     color: $text-color-tertiary;
   }
 
-  .teacherLinks {
-    .teacherLink {
+  .links {
+    .link {
       margin-right: 10px;
 
       &:hover {

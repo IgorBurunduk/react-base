@@ -1,6 +1,7 @@
 import { type PropsWithChildren, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
+import { CloseIcon } from '@/assets/icons';
 import { useScrollLock } from '@/hooks/useScrollLock';
 import { useWindowSize } from '@/hooks/useWindowSize';
 
@@ -46,7 +47,7 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
 
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
-    }
+    };
   }, [isOpen, onClose]);
 
   if (!isOpen) {
@@ -66,7 +67,13 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
           aria-label="Закрыть модальное окно"
           ref={closeButtonRef}
         >
-          {isMobile ? <span className={styles.icon}>✕</span> : 'Закрыть'}
+          {isMobile ? (
+            <span className={styles.icon}>
+              <CloseIcon />
+            </span>
+          ) : (
+            'Закрыть'
+          )}
         </button>
       </div>
     </div>,

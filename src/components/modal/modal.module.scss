@@ -25,15 +25,6 @@
     max-width: 940px;
     max-height: 768px;
     z-index: 1;
-
-    @media (max-width: 768px) {
-      width: 100dvw;
-      height: 100dvh;
-      max-width: none;
-      max-height: none;
-      border-radius: 0;
-      padding: 24px 16px;
-    }
   }
 
   .close{

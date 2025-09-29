@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 
 import { getTeacherById } from '@/api/mock-api';
-import { TeacherModal } from '@/modules/main-page-content/components/main-teachers/components/teacher-item/components/teacher-modal-content/components';
 import type { TeacherType } from '@/types/teacher';
+
+import { TeacherInfo } from './components/teacher-info';
 
 import styles from './teacher-modal-content.module.scss';
 
@@ -20,9 +21,10 @@ export const TeacherModalContent = ({ teacherId }: TeacherModalProps) => {
     getTeacherContent.then(
       (resolve) => {
         setIsLoading(false);
+        setError(false);
         setTeacherContent(resolve);
       },
-      (reject) => {
+      (reject:string) => {
         setIsLoading(false);
         setError(true);
         console.log(reject);
@@ -33,8 +35,8 @@ export const TeacherModalContent = ({ teacherId }: TeacherModalProps) => {
   return (
     <div className={styles.teacherModalContent}>
       {isLoading && <div className={styles.loading}>Загружаю...</div>}
-      {teacherContent && <TeacherModal teacherContent={teacherContent} />}
-      {error && <div className={styles.error}>Что-то пошло не так...</div>}
+      {error && <div className={styles.error}>Такого преподавателя не найдено</div>}
+      {teacherContent && <TeacherInfo teacherContent={teacherContent} />}
     </div>
   );
 };

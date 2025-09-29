@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { teachersImages } from '@/assets/images';
 import { Button } from '@/components/button';
@@ -15,6 +15,7 @@ interface TeacherItemType {
 
 export const TeacherItem = (teacherItem: TeacherItemType) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
 
   const { id, name, imageSrc, description } = teacherItem.teacherItem;
   const teacherImageSrc = teachersImages[imageSrc as keyof typeof teachersImages];
@@ -25,6 +26,7 @@ export const TeacherItem = (teacherItem: TeacherItemType) => {
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
+    buttonRef.current?.focus();
   };
 
   return (
@@ -32,11 +34,11 @@ export const TeacherItem = (teacherItem: TeacherItemType) => {
       <img src={teacherImageSrc} alt={name} className={styles.photo} />
       <h3 className={styles.name}>{name}</h3>
       <p className={styles.description}>{description}</p>
-      <Button onClick={handleButtonClick} variant="text" additionalClassname={styles.button}>
+      <Button onClick={handleButtonClick} variant="text" buttonRef={buttonRef} additionalClassname={styles.button}>
         Подробнее
       </Button>
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-        <TeacherModalContent teacherId={222} />
+        <TeacherModalContent teacherId={id} />
       </Modal>
     </div>
   );
