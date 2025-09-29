@@ -1,0 +1,45 @@
+@use '@/styles/variables.scss' as *;
+.modal {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  .backdrop{
+    position: absolute;
+    inset: 0;
+    background-color: $bg-color-primary;
+    opacity: .5;
+  }
+  .content{
+    position: relative;
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 32px;
+    overflow: auto;
+    max-width: 940px;
+    max-height: 768px;
+    z-index: 1;
+
+    @media (max-width: 768px) {
+      width: 100dvw;
+      height: 100dvh;
+      max-width: none;
+      max-height: none;
+      border-radius: 0;
+      padding: 24px 16px;
+    }
+  }
+  .close{
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+  }
+}
