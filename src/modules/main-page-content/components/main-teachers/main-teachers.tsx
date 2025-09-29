@@ -9,7 +9,7 @@ import { Container } from '@/components/container';
 import { useWindowSize } from '@/hooks/useWindowSize';
 import { MainPageContext } from '@/store/main-page';
 
-import { TeacherItem } from './components/teacher-item/teacher-item';
+import { TeacherItem } from './components/teacher-item';
 import { createSwiperConfig } from './lib/createSwiperConfig';
 
 import styles from './main-teachers.module.scss';

@@ -1,0 +1,38 @@
+@use '@/styles/variables.scss' as *;
+
+.teacherModal {
+  .teacherInfo {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto 1fr;
+    grid-column-gap: 40px;
+    grid-row-gap: 10px;
+    padding-right: 70px;
+  }
+
+  .teacherPhoto {
+    max-width: 160px;
+    grid-row-end: span 3;
+  }
+
+  .teacherName {
+    font-size: 24px;
+    font-weight: 600;
+    color: $text-color-primary;
+  }
+
+  .teacherDescription {
+    font-size: 18px;
+    color: $text-color-tertiary;
+  }
+
+  .teacherLinks {
+    .teacherLink {
+      margin-right: 10px;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}

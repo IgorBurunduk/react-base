@@ -8,17 +8,19 @@
   align-items: center;
   justify-content: center;
   z-index: 1000;
+
   .backdrop{
     position: absolute;
     inset: 0;
-    background-color: $bg-color-primary;
-    opacity: .5;
+    background-color: $bg-color-tertiary;
+    opacity: .1;
   }
+
   .content{
     position: relative;
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 32px;
+    background-color: $bg-color-primary;
+    border-radius: 20px;
+    padding: 40px;
     overflow: auto;
     max-width: 940px;
     max-height: 768px;
@@ -33,13 +35,15 @@
       padding: 24px 16px;
     }
   }
+
   .close{
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 40px;
+    right: 40px;
     background: none;
     border: none;
-    font-size: 16px;
+    font-size: 18px;
     cursor: pointer;
+    color: $text-color-tertiary;
   }
 }
