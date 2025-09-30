@@ -99,9 +99,9 @@
 
       .tabsContentEnd {
         position: fixed;
-        width: calc(90vw - 3px);
-        left: 5vw;
-        bottom: 5dvh;
+        width: calc(100% - 3px);
+        left: 0;
+        bottom: 0;
       }
     }
   }
