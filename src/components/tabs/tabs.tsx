@@ -40,6 +40,7 @@ export const Tabs = ({
           className={getTabClassName(value)}
           onClick={() => handleTabClick(tabs[index])}
           role="tab"
+          type="button"
           aria-selected={value === activeTab.value}
           aria-controls={`tabpanel-${value}`}
           id={`tab-${value}`}
