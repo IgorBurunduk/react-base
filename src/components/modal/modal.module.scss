@@ -41,14 +41,13 @@
   }
 }
 
-@media (max-height: 768px){
+@media (max-height: 768px) {
   .modal {
     .content {
       overflow-y: auto;
       max-height: 90%;
     }
   }
-
 }
 
 @media (max-width: 768px) {
@@ -87,4 +86,3 @@
     }
   }
 }
-
