@@ -24,7 +24,7 @@ export const TeacherModalContent = ({ teacherId }: TeacherModalProps) => {
         setError(false);
         setTeacherContent(resolve);
       },
-      (reject:string) => {
+      (reject: string) => {
         setIsLoading(false);
         setError(true);
         console.log(reject);

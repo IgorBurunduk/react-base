@@ -1,0 +1,25 @@
+@use '@/styles/variables' as *;
+
+.tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: flex-start;
+  padding-bottom: 20px;
+  gap: 20px;
+  border-bottom: 1px solid $bg-color-quinary;
+
+  .tab {
+    font-size: 20px;
+    color: $text-color-primary;
+    opacity: 0.3;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &.active {
+      color: $text-color-accent;
+      opacity: 1;
+    }
+  }
+}

@@ -1,22 +1,22 @@
 import { Fragment } from 'react';
 
-import styles from './tabs-content.module.scss';
+import styles from './tab-content.module.scss';
 
 interface TabsContentProps {
   title?: string;
   text: string[];
 }
 
-export const TabsContent = ({ title, text }: TabsContentProps) => {
+export const TabContent = ({ title, text }: TabsContentProps) => {
   return (
-    <div className={styles.tabsContent}>
+    <div className={styles.tabContent}>
       {title && <h3 className={styles.title}>{title}</h3>}
       <p className={styles.text}>
         {text.map((textItem, index) => {
           return (
             <Fragment key={index}>
               {textItem}
-              {(index < text.length - 1) && <br />}
+              {index < text.length - 1 && <br />}
             </Fragment>
           );
         })}

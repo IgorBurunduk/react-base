@@ -28,3 +28,13 @@
     color: $text-color-accent;
   }
 }
+
+@media (max-width: 768px) {
+  .teacherModalContent {
+    height: auto;
+
+    .loading {
+      font-size: 18px;
+    }
+  }
+}

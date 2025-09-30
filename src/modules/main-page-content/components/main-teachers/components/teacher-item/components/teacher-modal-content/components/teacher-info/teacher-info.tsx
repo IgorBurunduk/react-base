@@ -2,11 +2,13 @@ import { useState } from 'react';
 
 import { teachersImages } from '@/assets/images';
 import { Link } from '@/components/link';
+import { Select } from '@/components/select';
 import { Tabs } from '@/components/tabs';
+import { TabContent } from '@/components/tabs-content';
+import { useWindowSize } from '@/hooks/useWindowSize';
 import type { TeacherType } from '@/types/teacher';
 
 import styles from './teacher-info.module.scss';
-import { TabsContent } from '@/components/tabs-content';
 
 interface TeacherModalProps {
   teacherContent: TeacherType;
@@ -18,27 +20,30 @@ interface Option {
 }
 
 export const TeacherInfo = (teacherContent: TeacherModalProps) => {
-  const { id, name, imageSrc, description, links, tabs } = teacherContent.teacherContent;
+  const { name, imageSrc, description, links, tabs } = teacherContent.teacherContent;
 
   const tabsOptions: Option[] = tabs.map((tab) => {
     return { value: tab.name, label: tab.title };
   });
 
-  const [activeTab, setActiveTab] = useState(tabs[0].name);
+  const [activeTab, setActiveTab] = useState(tabsOptions[0]);
   const [activeTabContent, setActiveTabContent] = useState(tabs[0].data);
 
-  const onTabClickHandler = (value: string) => {
+  const { isMobile } = useWindowSize();
+
+  const onTabClickHandler = (value: Option) => {
     setActiveTab(value);
     setActiveTabContent(getActiveTab(value));
   };
 
-  const teacherImageSrc = teachersImages[imageSrc as keyof typeof teachersImages];
-  const getActiveTab = (value: string) => {
+  const getActiveTab = (value: Option) => {
     const activeTab = tabs.filter((tab) => {
-      return tab.name === value;
+      return tab.name === value.value;
     });
     return activeTab[0].data;
   };
+
+  const teacherImageSrc = teachersImages[imageSrc as keyof typeof teachersImages];
 
   return (
     <div className={styles.teacherInfo}>
@@ -56,19 +61,21 @@ export const TeacherInfo = (teacherContent: TeacherModalProps) => {
           ))}
         </div>
       </div>
-      <div className={styles.teacherTabs}>
+      {isMobile ? (
+        <Select options={tabsOptions} value={activeTab} onChange={onTabClickHandler} />
+      ) : (
         <Tabs
           tabs={tabsOptions}
           activeTab={activeTab}
           onTabClick={onTabClickHandler}
           ariaLabel="Навигация по преподавателю"
         />
-
-        <div className={styles.tabsContent}>
-          {activeTabContent.map((tab, index) => (
-            <TabsContent key={index} title={tab.title} text={tab.text} />
-          ))}
-        </div>
+      )}
+      <div className={styles.tabsContent}>
+        {activeTabContent.map((tab, index) => (
+          <TabContent key={index} title={tab.title} text={tab.text} />
+        ))}
+        <div className={styles.tabsContentEnd}></div>
       </div>
     </div>
   );

@@ -34,7 +34,12 @@ export const TeacherItem = (teacherItem: TeacherItemType) => {
       <img src={teacherImageSrc} alt={name} className={styles.photo} />
       <h3 className={styles.name}>{name}</h3>
       <p className={styles.description}>{description}</p>
-      <Button onClick={handleButtonClick} variant="text" buttonRef={buttonRef} additionalClassname={styles.button}>
+      <Button
+        onClick={handleButtonClick}
+        variant="text"
+        buttonRef={buttonRef}
+        additionalClassname={styles.button}
+      >
         Подробнее
       </Button>
       <Modal isOpen={isModalOpen} onClose={handleCloseModal}>

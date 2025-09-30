@@ -9,35 +9,41 @@ interface TabOption {
 
 interface TabsProps {
   tabs: TabOption[];
-  activeTab: string;
-  onTabClick: (value: string) => void;
+  activeTab: TabOption;
+  onTabClick: (value: TabOption) => void;
   additionalClassname?: string;
   ariaLabel?: string;
 }
 
-export const Tabs = ({ tabs, activeTab, onTabClick, additionalClassname, ariaLabel }: TabsProps) => {
+export const Tabs = ({
+  tabs,
+  activeTab,
+  onTabClick,
+  additionalClassname,
+  ariaLabel,
+}: TabsProps) => {
   const getTabClassName = (value: string) => {
     const baseClass = styles.tab;
-    const activeClass = value === activeTab ? styles.active : '';
+    const activeClass = value === activeTab.value ? styles.active : '';
     return [baseClass, activeClass, additionalClassname].filter(Boolean).join(' ');
   };
 
-  const handleTabClick = (value: string) => {
+  const handleTabClick = (value: TabOption) => {
     onTabClick(value);
   };
 
   return (
     <div className={styles.tabs} role="tablist" aria-label={ariaLabel}>
-      {tabs.map(({ value, label }) => (
+      {tabs.map(({ value, label }, index) => (
         <Button
           key={value}
           className={getTabClassName(value)}
-          onClick={() => handleTabClick(value)}
+          onClick={() => handleTabClick(tabs[index])}
           role="tab"
-          aria-selected={value === activeTab}
+          aria-selected={value === activeTab.value}
           aria-controls={`tabpanel-${value}`}
           id={`tab-${value}`}
-          tabIndex={value === activeTab ? 0 : -1}
+          tabIndex={value === activeTab.value ? 0 : -1}
         >
           {label}
         </Button>
