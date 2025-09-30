@@ -22,7 +22,7 @@ export const Tabs = ({
   additionalClassname,
   ariaLabel,
 }: TabsProps) => {
-  const getTabClassName = (value: string) => {
+  const createTabClassName = (value: string) => {
     const baseClass = styles.tab;
     const activeClass = value === activeTab.value ? styles.active : '';
     return [baseClass, activeClass, additionalClassname].filter(Boolean).join(' ');
@@ -32,13 +32,17 @@ export const Tabs = ({
     onTabClick(value);
   };
 
+  const createTabClickHandler = (value: TabOption) => {
+    return () => handleTabClick(value);
+  };
+
   return (
     <div className={styles.tabs} role="tablist" aria-label={ariaLabel}>
       {tabs.map(({ value, label }, index) => (
         <Button
           key={value}
-          className={getTabClassName(value)}
-          onClick={() => handleTabClick(tabs[index])}
+          className={createTabClassName(value)}
+          onClick={createTabClickHandler(tabs[index])}
           role="tab"
           type="button"
           aria-selected={value === activeTab.value}

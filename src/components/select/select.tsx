@@ -23,12 +23,16 @@ export const Select = ({ options, value, onChange, additionalClassname }: Select
   const selectRef = useRef(null);
   const buttonRef = useRef(null);
 
-  const handleSelectToggle = () => {
-    isSelectOpen ? setIsSelectOpen(false) : setIsSelectOpen(true);
+  const handleSelectOpen = () => {
+    setIsSelectOpen(true);
   };
 
   const handleSelectClose = () => {
     setIsSelectOpen(false);
+  };
+
+  const handleSelectToggle = () => {
+    isSelectOpen ? handleSelectClose() : handleSelectOpen();
   };
 
   const createSelectHandler = (option: Option) => () => {

@@ -18,18 +18,16 @@ export const TeacherModalContent = ({ teacherId }: TeacherModalProps) => {
 
   useEffect(() => {
     const getTeacherContent = getTeacherById(teacherId);
-    getTeacherContent.then(
-      (resolve) => {
-        setIsLoading(false);
+    getTeacherContent
+      .then((resolve) => {
         setError(false);
         setTeacherContent(resolve);
-      },
-      (reject: string) => {
-        setIsLoading(false);
+      })
+      .catch((reject: string) => {
         setError(true);
         console.log(reject);
-      },
-    );
+      })
+      .finally(() => setIsLoading(false));
   }, [teacherId, teacherContent]);
 
   return (

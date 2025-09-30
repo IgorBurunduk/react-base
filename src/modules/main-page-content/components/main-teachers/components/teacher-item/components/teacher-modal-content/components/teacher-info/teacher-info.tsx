@@ -4,9 +4,10 @@ import { teachersImages } from '@/assets/images';
 import { Link } from '@/components/link';
 import { Select } from '@/components/select';
 import { Tabs } from '@/components/tabs';
-import { TabContent } from '@/components/tabs-content';
 import { useWindowSize } from '@/hooks/useWindowSize';
 import type { TeacherType } from '@/types/teacher';
+
+import { TabContent } from './components/tabs-content';
 
 import styles from './teacher-info.module.scss';
 
@@ -33,10 +34,10 @@ export const TeacherInfo = (teacherContent: TeacherModalProps) => {
 
   const onTabClickHandler = (value: Option) => {
     setActiveTab(value);
-    setActiveTabContent(getActiveTab(value));
+    setActiveTabContent(createActiveTab(value));
   };
 
-  const getActiveTab = (value: Option) => {
+  const createActiveTab = (value: Option) => {
     const activeTab = tabs.filter((tab) => {
       return tab.name === value.value;
     });

@@ -4,7 +4,7 @@
   width: 860px;
   height: 688px;
   max-width: 100%;
-  max-height: 100%;
+  max-height: calc(95dvh - 80px);
 
   .loading {
     display: flex;
@@ -26,12 +26,6 @@
     font-weight: 600;
     font-size: 24px;
     color: $text-color-accent;
-  }
-}
-
-@media (max-height: 768px) {
-  .teacherModalContent {
-    height: auto;
   }
 }
 
