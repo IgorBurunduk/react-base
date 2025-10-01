@@ -27,8 +27,9 @@ const packageItems: PackageItemsType = [
 ];
 
 export const MainPackages = () => {
+
   return (
-    <section className={styles.package}>
+    <section id="packages" className={`${styles.package} anchor-target`}>
       <Container>
         <div className={styles.wrapper}>
           <h2 className={styles.title}>Выберете нужный пакет</h2>

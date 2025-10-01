@@ -27,7 +27,7 @@ const aboutItems = [
 
 export const MainAbout = () => {
   return (
-    <section className={styles.about}>
+    <section id="status" className={`${styles.about} anchor-target`}>
       <Container>
         <div className={styles.wrapper}>
           <p className={styles.text}>

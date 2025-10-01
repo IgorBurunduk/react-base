@@ -55,7 +55,7 @@ export const MainTeachers = () => {
   });
 
   return (
-    <section className={styles.teachers}>
+    <section id="teachers" className={`${styles.teachers} anchor-target`}>
       <Container>
         <h2 className={styles.title}>Профессиональные тренеры</h2>
         <Swiper

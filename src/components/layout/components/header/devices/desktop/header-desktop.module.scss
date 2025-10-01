@@ -1,3 +1,5 @@
+@use '@/styles/variables' as *;
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -5,4 +7,5 @@
   font-size: 20px;
   list-style: none;
   gap: 40px;
+
 }
