@@ -1,7 +1,7 @@
 import { Container } from '@/components/container';
 
 import { Logo } from '../logo';
-import { PhoneCallButton } from '../phone-call-button';
+import { PhoneCallButton } from '../header/devices/desktop/components/phone-call-button';
 
 import styles from './footer.module.scss';
 

@@ -7,6 +7,8 @@ import { Link } from '@/components/link';
 import { useScrollLock } from '@/hooks/useScrollLock';
 import type { NavbarItemsType } from '@/types/navbar-items';
 
+import { IconButton } from './components/icon-button';
+
 import styles from './header-mobile.module.scss';
 
 interface HeaderMobileProps {
@@ -32,22 +34,18 @@ export const HeaderMobile = (headerMobileProps: HeaderMobileProps) => {
   return (
     <>
       <Logo />
-      <Link
+      <IconButton
+        icon={<PhoneIcon />}
+        additionalClassname={styles.phoneCallButton}
         href="tel:88000001122"
-        additionalClassname={`${styles.iconButton} ${styles.phoneCallButton}`}
-      >
-        <PhoneIcon />
-      </Link>
-      <Button
-        variant="text"
+      />
+      <IconButton
+        icon={<BurgerIcon />}
         onClick={handleNavbarMobileOpen}
-        additionalClassname={styles.iconButton}
         aria-label="Открыть меню"
         aria-expanded={isNavbarMobileOpen}
         aria-controls="burger-menu"
-      >
-        <BurgerIcon />
-      </Button>
+      />
 
       {isNavbarMobileOpen && (
         <div className={styles.navbarContainer}>
@@ -71,14 +69,11 @@ export const HeaderMobile = (headerMobileProps: HeaderMobileProps) => {
               ))}
             </ul>
 
-            <Button
-              variant="text"
+            <IconButton
+              icon={<CloseIcon />}
               onClick={handleNavbarMobileClose}
-              aria-label="Закрыть меню"
-              additionalClassname={`${styles.iconButton} ${styles.closeButton}`}
-            >
-              <CloseIcon />
-            </Button>
+              additionalClassname={styles.closeButton}
+            />
           </nav>
         </div>
       )}

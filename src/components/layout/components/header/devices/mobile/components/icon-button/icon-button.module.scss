@@ -1,0 +1,24 @@
+@use '@/styles/variables.scss' as *;
+
+.iconButton {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  padding: 2px;
+  border: 1px solid transparent;
+  background-image: linear-gradient(to bottom, $bg-color-senary, $bg-color-senary),
+    linear-gradient(to bottom, $bg-color-septenary, transparent);
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  color: $text-color-secondary;
+  transition: border-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: $bg-color-senary;
+    border: 1px solid $bg-color-septenary;
+  }
+}
