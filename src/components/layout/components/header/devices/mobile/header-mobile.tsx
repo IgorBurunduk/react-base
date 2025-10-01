@@ -1,9 +1,8 @@
 import { useState } from 'react';
 
-import { BurgerIcon, CloseIcon } from '@/assets/icons';
+import { BurgerIcon, CloseIcon, PhoneIcon } from '@/assets/icons';
 import { Button } from '@/components/button';
 import { Logo } from '@/components/layout/components/logo';
-import { PhoneCallButton } from '@/components/layout/components/phone-call-button';
 import { Link } from '@/components/link';
 import { useScrollLock } from '@/hooks/useScrollLock';
 import type { NavbarItemsType } from '@/types/navbar-items';
@@ -33,7 +32,12 @@ export const HeaderMobile = (headerMobileProps: HeaderMobileProps) => {
   return (
     <>
       <Logo />
-      <PhoneCallButton additionalClassname={`${styles.iconButton} ${styles.phoneCallButton}`} />
+      <Link
+        href="tel:88000001122"
+        additionalClassname={`${styles.iconButton} ${styles.phoneCallButton}`}
+      >
+        <PhoneIcon />
+      </Link>
       <Button
         variant="text"
         onClick={handleNavbarMobileOpen}
@@ -67,16 +71,14 @@ export const HeaderMobile = (headerMobileProps: HeaderMobileProps) => {
               ))}
             </ul>
 
-            <span className={styles.closeButtonContainer}>
-              <Button
-                variant="text"
-                onClick={handleNavbarMobileClose}
-                aria-label="Закрыть меню"
-                additionalClassname={`${styles.iconButton} ${styles.closeButton}`}
-              >
-                <CloseIcon />
-              </Button>
-            </span>
+            <Button
+              variant="text"
+              onClick={handleNavbarMobileClose}
+              aria-label="Закрыть меню"
+              additionalClassname={`${styles.iconButton} ${styles.closeButton}`}
+            >
+              <CloseIcon />
+            </Button>
           </nav>
         </div>
       )}
