@@ -7,7 +7,7 @@ import type { NavbarItemsType } from '@/types/navbar-items';
 import styles from './header.module.scss';
 
 export const Header = () => {
-  const navbarItems : NavbarItemsType = [
+  const navbarItems: NavbarItemsType = [
     {
       id: 1,
       title: 'О школе',
@@ -25,14 +25,13 @@ export const Header = () => {
     },
   ];
 
-  const { width } = useWindowSize();
-  const isMobileDevice = width < 1024;
+  const { isTablet } = useWindowSize();
 
   return (
     <header className={styles.header}>
       <Container isWide>
         <div className={styles.content}>
-          {isMobileDevice ? (
+          {isTablet ? (
             <HeaderMobile navbarItems={navbarItems} />
           ) : (
             <HeaderDesktop navbarItems={navbarItems} />

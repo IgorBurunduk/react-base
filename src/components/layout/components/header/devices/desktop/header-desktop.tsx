@@ -16,7 +16,7 @@ export const HeaderDesktop = (headerDesktopProps: HeaderDesktopProps) => {
     <>
       <Logo />
       <nav>
-        <ul className={styles.navbar}>
+        <ul className={styles.navbarMenu}>
           {navbarItems.map((navbarItem) => (
             <li key={navbarItem.id}>
               <Link href={`${navbarItem.href}`}>{navbarItem.title}</Link>

@@ -27,7 +27,6 @@ const packageItems: PackageItemsType = [
 ];
 
 export const MainPackages = () => {
-
   return (
     <section id="packages" className={`${styles.package} anchor-target`}>
       <Container>
