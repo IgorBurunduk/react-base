@@ -32,8 +32,8 @@ export const Tabs = ({
     onTabClick(value);
   };
 
-  const createTabClickHandler = (value: TabOption) => {
-    return () => handleTabClick(value);
+  const createTabClickHandler = (value: TabOption) => () => {
+    handleTabClick(value);
   };
 
   return (
