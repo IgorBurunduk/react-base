@@ -1,0 +1,56 @@
+@use '@/styles/variables.scss' as *;
+
+.select {
+  position: relative;
+
+  .button {
+    display: inline-flex;
+    width: 100%;
+    padding: 10px 50px;
+    border-radius: 0;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    .dropdownArrow {
+      width: 10px;
+
+      &.open {
+        transform: rotate(180deg) translateY(-10%);
+      }
+    }
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    border-left: 1px solid $bg-color-quaternary;
+    border-right: 1px solid $bg-color-quaternary;
+    background-color: $bg-color-primary;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+
+    .option {
+      width: 100%;
+      padding: 10px 50px;
+      border-radius: 0;
+      font-size: 16px;
+      color: $text-color-primary;
+      border-bottom: 1px solid $bg-color-quaternary;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+
+      &:hover {
+        background-color: $bg-color-quinary;
+      }
+
+      &.activeOption {
+        background-color: $bg-color-accent;
+        color: $text-color-secondary;
+        opacity: 0.7;
+      }
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@use '@/styles/variables' as *;
+
+.teacherInfo {
+  .introduction {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto 1fr;
+    grid-column-gap: 40px;
+    grid-row-gap: 10px;
+    padding-right: 70px;
+    margin-bottom: 40px;
+
+    .photo {
+      max-width: 160px;
+      grid-row-end: span 3;
+    }
+
+    .name {
+      font-size: 24px;
+      font-weight: 600;
+      color: $text-color-primary;
+    }
+
+    .description {
+      font-size: 18px;
+      color: $text-color-tertiary;
+    }
+
+    .links {
+      .link {
+        margin-right: 10px;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+
+  .tabsContent {
+    position: relative;
+    max-height: 345px;
+    overflow-y: auto;
+    margin-top: 20px;
+
+    &::-webkit-scrollbar {
+      width: 5px;
+      border-radius: 40px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: $bg-color-scroll;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $bg-color-tertiary;
+      border-radius: 40px;
+    }
+
+    .tabsContentEnd {
+      position: sticky;
+      height: 32px;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(to top, $bg-color-primary, transparent);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .teacherInfo {
+    .introduction {
+      grid-column-gap: 10px;
+      grid-row-gap: 5px;
+      margin-bottom: 20px;
+      padding-right: 0;
+
+      .photo {
+        max-width: 60px;
+      }
+
+      .name {
+        font-size: 16px;
+      }
+
+      .description {
+        font-size: 12px;
+      }
+
+      .links {
+        .link {
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .tabsContent {
+      height: auto;
+      max-height: 100%;
+      padding-bottom: 25px;
+
+      .tabsContentEnd {
+        position: fixed;
+        height: 25px;
+        width: calc(100% - 3px);
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+}

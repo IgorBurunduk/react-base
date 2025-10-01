@@ -1,21 +1,23 @@
 export const CloseIcon = () => {
   return (
-    <svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
       <line
-        x1="1.49245"
-        y1="2"
-        x2="12.6"
-        y2="13.1075"
-        stroke="white"
+        x1="1.05532"
+        y1="-1.05532"
+        x2="16.6082"
+        y2="-1.05532"
+        transform="matrix(0.681575 0.731748 -0.681575 0.731748 1 2)"
+        stroke="#141024"
         strokeWidth="2.11065"
         strokeLinecap="round"
       />
       <line
-        x1="1.40039"
-        y1="13.1076"
-        x2="12.5079"
-        y2="2.0001"
-        stroke="white"
+        x1="1.05532"
+        y1="-1.05532"
+        x2="16.6082"
+        y2="-1.05532"
+        transform="matrix(0.681575 -0.731748 0.681575 0.731748 1.96094 15)"
+        stroke="#141024"
         strokeWidth="2.11065"
         strokeLinecap="round"
       />
