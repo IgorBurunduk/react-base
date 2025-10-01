@@ -71,6 +71,7 @@ export const HeaderMobile = (headerMobileProps: HeaderMobileProps) => {
               icon={<CloseIcon />}
               onClick={handleNavbarMobileClose}
               additionalClassname={styles.closeButton}
+              aria-label="Закрыть меню"
             />
           </nav>
         </div>
