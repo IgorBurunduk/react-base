@@ -1,30 +1,31 @@
 import { Container } from '@/components/container';
-import { HeaderDesktop } from '@/components/layout/components/header/devices/desktop/header-desktop';
-import { HeaderMobile } from '@/components/layout/components/header/devices/mobile/header-mobile';
 import { useWindowSize } from '@/hooks/useWindowSize';
-import type { NavbarItemsType } from '@/types/navbar-items';
+
+import { HeaderDesktop } from './devices/desktop/header-desktop';
+import { HeaderMobile } from './devices/mobile/header-mobile';
+import type { NavbarItemsType } from './types/navbar-items';
 
 import styles from './header.module.scss';
 
-export const Header = () => {
-  const navbarItems: NavbarItemsType = [
-    {
-      id: 1,
-      title: 'О школе',
-      href: '#status',
-    },
-    {
-      id: 2,
-      title: 'Тренеры',
-      href: '#teachers',
-    },
-    {
-      id: 3,
-      title: 'Стоимость',
-      href: '#packages',
-    },
-  ];
+const navbarItems: NavbarItemsType = [
+  {
+    id: 1,
+    title: 'О школе',
+    href: '#status',
+  },
+  {
+    id: 2,
+    title: 'Тренеры',
+    href: '#teachers',
+  },
+  {
+    id: 3,
+    title: 'Стоимость',
+    href: '#packages',
+  },
+];
 
+export const Header = () => {
   const { isTablet } = useWindowSize();
 
   return (

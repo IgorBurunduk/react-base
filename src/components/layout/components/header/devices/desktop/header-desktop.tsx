@@ -1,7 +1,8 @@
-import { Logo } from '@/components/layout/components/logo';
-import { PhoneCallButton } from '@/components/layout/components/phone-call-button';
 import { Link } from '@/components/link';
-import type { NavbarItemsType } from '@/types/navbar-items';
+
+import { Logo } from '../../../logo';
+import { PhoneCallButton } from '../../../phone-call-button';
+import type { NavbarItemsType } from '../../types/navbar-items';
 
 import styles from './header-desktop.module.scss';
 

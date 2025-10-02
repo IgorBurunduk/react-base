@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
 import { BurgerIcon, CloseIcon, PhoneIcon } from '@/assets/icons';
-import { IconButton } from '@/components/layout/components/icon-button';
-import { Logo } from '@/components/layout/components/logo';
+import { IconButton } from '@/components/icon-button';
 import { Link } from '@/components/link';
 import { useScrollLock } from '@/hooks/useScrollLock';
-import type { NavbarItemsType } from '@/types/navbar-items';
+
+import { Logo } from '../../../logo';
+import type { NavbarItemsType } from '../../types/navbar-items';
 
 import styles from './header-mobile.module.scss';
 
