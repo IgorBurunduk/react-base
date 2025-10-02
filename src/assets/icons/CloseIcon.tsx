@@ -7,7 +7,7 @@ export const CloseIcon = () => {
         x2="16.6082"
         y2="-1.05532"
         transform="matrix(0.681575 0.731748 -0.681575 0.731748 1 2)"
-        stroke="#141024"
+        stroke="currentColor"
         strokeWidth="2.11065"
         strokeLinecap="round"
       />
@@ -17,7 +17,7 @@ export const CloseIcon = () => {
         x2="16.6082"
         y2="-1.05532"
         transform="matrix(0.681575 -0.731748 0.681575 0.731748 1.96094 15)"
-        stroke="#141024"
+        stroke="currentColor"
         strokeWidth="2.11065"
         strokeLinecap="round"
       />

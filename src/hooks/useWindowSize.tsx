@@ -21,5 +21,6 @@ export const useWindowSize = () => {
   return {
     ...windowSize,
     isMobile: windowSize.width <= 768,
+    isTablet: windowSize.width <= 1024,
   };
 };

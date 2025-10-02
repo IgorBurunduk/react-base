@@ -2,6 +2,7 @@ import { type PropsWithChildren, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 
 import { CloseIcon } from '@/assets/icons';
+import { Button } from '@/components/button';
 import { useScrollLock } from '@/hooks/useScrollLock';
 import { useWindowSize } from '@/hooks/useWindowSize';
 
@@ -61,11 +62,11 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
       <div className={styles.content}>
         {children}
 
-        <button
+        <Button
           onClick={onClose}
           className={styles.close}
           aria-label="Закрыть модальное окно"
-          ref={closeButtonRef}
+          buttonRef={closeButtonRef}
         >
           {isMobile ? (
             <span className={styles.icon}>
@@ -74,7 +75,7 @@ export const Modal = ({ isOpen, onClose, children }: ModalProps) => {
           ) : (
             'Закрыть'
           )}
-        </button>
+        </Button>
       </div>
     </div>,
     document.body,

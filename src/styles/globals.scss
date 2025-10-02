@@ -23,3 +23,19 @@ body {
 section {
   padding: 120px 0;
 }
+
+.anchor-target {
+  scroll-margin-top: 108px;
+}
+
+@media (max-width: 1024px) {
+  .anchor-target {
+    scroll-margin-top: 68px;
+  }
+}
+
+@media (max-width: 768px) {
+  .anchor-target {
+    scroll-margin-top: 64px;
+  }
+}
