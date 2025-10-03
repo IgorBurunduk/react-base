@@ -11,7 +11,7 @@ function NotFound() {
 }
 
 export const App = () => (
-  <BrowserRouter>
+  <BrowserRouter basename="/react-base/pr-8">
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<MainPage />}>
