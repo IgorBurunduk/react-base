@@ -1,7 +1,8 @@
-import { Route, Routes } from 'react-router';
+import { BrowserRouter, Route, Routes } from 'react-router';
 
-import { MainLayout } from '@/layout/layout';
-import { TeacherModalRoute } from '@/routes/teacher-modal-route';
+import { Layout } from '@/components/layout';
+import { MainPage } from '@/pages/main-page';
+import { TeacherPage } from '@/pages/teacher-page';
 
 import './styles/index.scss';
 
@@ -10,12 +11,14 @@ function NotFound() {
 }
 
 export const App = () => (
-  <Routes>
-    <Route path="/" element={<MainLayout />}>
-      <Route path="teacher">
-        <Route path=":id" element={<TeacherModalRoute />} />
+  <BrowserRouter>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<MainPage />}>
+          <Route path="teacher/:id" element={<TeacherPage />}></Route>
+        </Route>
+        <Route path="*" element={<NotFound />} />
       </Route>
-      <Route path="*" element={<NotFound />} />
-    </Route>
-  </Routes>
+    </Routes>
+  </BrowserRouter>
 );
