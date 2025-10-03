@@ -1,10 +1,21 @@
-import { Layout } from '@/components/layout';
-import { MainPage } from '@/pages/main-page';
+import { Route, Routes } from 'react-router';
+
+import { MainLayout } from '@/layout/layout';
+import { TeacherModalRoute } from '@/routes/teacher-modal-route';
 
 import './styles/index.scss';
 
+function NotFound() {
+  return null;
+}
+
 export const App = () => (
-  <Layout>
-    <MainPage />
-  </Layout>
+  <Routes>
+    <Route path="/" element={<MainLayout />}>
+      <Route path="teacher">
+        <Route path=":id" element={<TeacherModalRoute />} />
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Route>
+  </Routes>
 );

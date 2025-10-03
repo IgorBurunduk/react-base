@@ -1,11 +1,9 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
+import { useNavigate } from 'react-router';
 
 import { teachersImages } from '@/assets/images';
 import { Button } from '@/components/button';
-import { Modal } from '@/components/modal';
 import type { TeacherListType } from '@/types/teacher';
-
-import { TeacherModalContent } from './components/teacher-modal-content';
 
 import styles from './teacher-item.module.scss';
 
@@ -14,19 +12,14 @@ interface TeacherItemType {
 }
 
 export const TeacherItem = (teacherItem: TeacherItemType) => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const buttonRef = useRef<HTMLButtonElement | null>(null);
+  const navigate = useNavigate();
 
   const { id, name, imageSrc, description } = teacherItem.teacherItem;
   const teacherImageSrc = teachersImages[imageSrc as keyof typeof teachersImages];
 
   const handleButtonClick = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-    buttonRef.current?.focus();
+    navigate(`/teacher/${id}`);
   };
 
   return (
@@ -42,9 +35,6 @@ export const TeacherItem = (teacherItem: TeacherItemType) => {
       >
         Подробнее
       </Button>
-      <Modal isOpen={isModalOpen} onClose={handleCloseModal}>
-        <TeacherModalContent teacherId={id} />
-      </Modal>
     </div>
   );
 };
