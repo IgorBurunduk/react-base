@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Outlet } from 'react-router';
 
 import { getTeachersList } from '@/api/mock-api';
 import { MainPageContent } from '@/modules/main-page-content';
@@ -17,6 +18,7 @@ export const MainPage = () => {
   return (
     <MainPageContext.Provider value={{ teachersList }}>
       <MainPageContent />
+      <Outlet />
     </MainPageContext.Provider>
   );
 };
