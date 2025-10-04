@@ -8,7 +8,7 @@ import { TeacherPage } from '@/pages/teacher-page';
 import './styles/index.scss';
 
 export const App = () => (
-  <BrowserRouter basename="/react-base/pr-8/">
+  <BrowserRouter>
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<MainPage />}>
